@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Portal UKI Digital - Hospital Permai</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0056b3">
+
+  <!-- iOS PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Portal UKI">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0056b3;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbzqQSqm-2qboRVEaRxoHgDrNmGz4Dj8jar_n4Qx7h8-kOj2AXLFYzFs_Mc-7bhD8VqS/exec" 
+    allow="camera; microphone; geolocation; clipboard-read; clipboard-write" 
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+  </iframe>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").catch(function(err) {
+        console.log("ServiceWorker registration failed: ", err);
+      });
+    }
+  </script>
+</body>
+</html>
